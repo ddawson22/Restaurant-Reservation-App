@@ -1,6 +1,6 @@
-import react from "react"
+import react from "react";
 
-ReservationForm({
+function ReservationForm({
     handleChange,
     submitHandler,
     formData,
