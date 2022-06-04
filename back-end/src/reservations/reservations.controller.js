@@ -42,26 +42,30 @@ function hasOnlyValidProperties(req, res, next) {
 
 
 function isValidReservation(req, res, next){
-  const {data = {} } = req.body;
-  console.log(Date.now(), "Date Now");
-  console.log(Date.parse(data["reservation_date"]), "Today");
-  let temp_reservation_time = data["reservation_time"] && data["reservation_time"].replace(":","");
-  if(new Date(data["reservation_date"]).getDay()+1 === 2){
+  const { data = {} } = req.body;
+   let tempTime =
+     data["reservation_time"] && data["reservation_time"].replace(":", "");
+   if (new Date(data["reservation_date"]).getDay() + 1 === 2) {
     next({
       status: 400,
-      message: `We are closed on Tuesdays, please choose a different date for your reservation.`
-    })
-  } else if(Date.parse(data["reservation_date"]) < Date.now()){
-    console.log('Please check for errors.');
+      message: `We are closed on Tuesdays; please choose a different date for your reservation.`
+    });
+  } else if (Date.parse(data["reservation_date"]) < Date.now()) {
     next({
-      status:400,
+      status: 400,
       message: `Reservations must be reserved for future dates.`
-    })
-  } else if(temp_reservation_time < 1030){
-    next({ status: 400, message: "Our restaurant is not open at this time. Please choose a time when we are open!"});
+    });
+  } else if(tempTime < 1030){
+    next({ 
+      status: 400, 
+      message: "Our restaurant is not open at this time. Please choose a time when we are open!"
+    });
   }
-  else if(temp_reservation_time > 2130){
-    next({ status: 400, message: "Reservation cannot be less than one hour before business closing!"});
+  else if(tempTime > 2130){
+    next({ 
+      status: 400, 
+      message: "Reservation cannot be less than one hour before business closing!"
+    });
   }
   next();
 }
@@ -99,6 +103,25 @@ function isValidPeople(req, res, next) {
   next();
 }
 
+async function reservationExists(req, res, next) {
+  const { reservation_id } = req.params;
+  const reservation = await service.read(reservation_id);
+  if (reservation) {
+    res.locals.reservation = reservation;
+    return next();
+  } else {
+    return next({
+      status: 404,
+      message: `Reservation ID ${reservation_id} does not exist.`,
+    });
+  }
+}
+
+function read(req, res) {
+  const { reservation: data } = res.locals;
+  res.json({ data });
+}
+
 async function list(req, res) {
   const data = await service.list(req.query.date)
   res.json({ data });
@@ -119,4 +142,5 @@ module.exports = {
     isValidReservation,
     asyncErrorBoundary(create)],
   list: asyncErrorBoundary(list),
+  read: [asyncErrorBoundary(reservationExists), read]
 };

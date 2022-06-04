@@ -4,6 +4,8 @@ import Dashboard from "../components/dashboard/Dashboard"
 import NotFound from "./NotFound";
 import { today } from "../utils/date-time";
 import NewReservation from "../components/reservations/NewReservation";
+import Seating from "../components/reservations/Seating";
+import NewTable from "../components/tables/NewTable";
 /**
  * Defines all the routes for the application.
  *
@@ -22,6 +24,12 @@ import NewReservation from "../components/reservations/NewReservation";
       </Route>
       <Route exact={true} path="/reservations">
         <Redirect to={"/dashboard"} />
+      </Route>
+      <Route path="/reservations/:reservation_id/seat">
+        <Seating />
+      </Route>
+      <Route path="/tables/new">
+        <NewTable />
       </Route>
       <Route path="/dashboard">
         <Dashboard date={today()} />
