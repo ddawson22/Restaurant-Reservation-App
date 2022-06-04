@@ -19,7 +19,7 @@ function ReservationForm({
             value={formData.first_name}
           />
         </label>
-        <label htmlFor="first_name">
+        <label htmlFor="last_name">
           Enter Your Last Name:
           <input
             id="last_name"
@@ -52,7 +52,7 @@ function ReservationForm({
             value={formData.reservation_date}
           />
         </label>
-        <label htmlFor="reservation_date">
+        <label htmlFor="reservation_time">
           Select Reservation Time:
           <input
             id="reservation_time"
@@ -63,7 +63,7 @@ function ReservationForm({
             value={formData.reservation_time}
           />
         </label>
-        <label htmlFor="reservation_date">
+        <label htmlFor="people">
           Set Number of Guests:
           <input
             id="people"
@@ -76,8 +76,14 @@ function ReservationForm({
           />
         </label>
         <div>
-         <button className="btn btn-primary mr-2" type="submit">Submit</button>
-         <button className="btn btn-secondary" type="button" onClick={handleCancel}>
+        <button className="btn btn-primary mr-2" type="submit">
+           Submit
+         </button>
+         <button
+           className="btn btn-secondary"
+           type="button"
+           onClick={handleCancel}
+         >
            Cancel
          </button>
        </div>
