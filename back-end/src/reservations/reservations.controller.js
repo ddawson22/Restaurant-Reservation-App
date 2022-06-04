@@ -1,6 +1,6 @@
-const service = require("./reservations.service")
-const asyncErrorBoundary = require("../errors/asyncErrorBoundary")
-const hasProperties = require("../errors/hasProperties")
+const service = require("./reservations.service");
+const asyncErrorBoundary = require("../errors/asyncErrorBoundary");
+const hasProperties = require("../errors/hasProperties");
 
 const hasRequiredProperties = 
 hasProperties(
@@ -21,6 +21,7 @@ const VALID_PROPERTIES = [
   "people",
   "created_at",
   "updated_at",
+  "status",
 ]
 
 
@@ -132,15 +133,68 @@ async function create(req, res){
   res.status(201).json({ data })
 }
 
+function isValidStatus(req, res, next) {
+  const reservationStatus = res.locals.reservation;
+  const { data = {} } = req.body;
+  const status = data["status"];
+
+  if (reservationStatus.status === "finished") {
+    return next({
+      status: 400,
+      message: "Reservation has already been finished.",
+    });
+  }
+
+  const isvalid = ["booked", "seated", "finished", "cancelled"];
+  if (isvalid.includes(status)) {
+    return next();
+  }
+
+  return next({
+    status: 400,
+    message: `Invalid or unknown status: ${status}`,
+  });
+}
+
+function isBooked(req, res, next) {
+  const { data = {} } = req.body;
+  const status = data["status"];
+
+  if (status === "booked" || status === undefined) {
+    return next();
+  }
+  return next({
+    status: 400,
+    message: `Invalid or unknown status: ${status}`,
+  });
+}
+
+async function updateStatus(req, res) {
+  const reservation = res.locals.reservation;
+  const { status } = req.body.data;
+  const updatedReservation = {
+    ...reservation,
+    status,
+  };
+  const data = await service.updateStatus(updatedReservation);
+  res.json({ data });
+}
+
 module.exports = {
   create: 
   [hasOnlyValidProperties, 
-    hasRequiredProperties, 
+    hasRequiredProperties,
+    isBooked, 
     isValidDate, 
     isValidTime, 
     isValidPeople, 
     isValidReservation,
     asyncErrorBoundary(create)],
   list: asyncErrorBoundary(list),
-  read: [asyncErrorBoundary(reservationExists), read]
+  read: [asyncErrorBoundary(reservationExists), read],
+  updateStatus: [
+    asyncErrorBoundary(reservationExists),
+    isValidStatus,
+    asyncErrorBoundary(updateStatus)
+  ],
 };

@@ -119,6 +119,17 @@ const VALID_PROPERTIES = [
     }
     next();
   }
+
+  function isNotSeated(req, res, next) {
+    const reservationSeat = res.locals.reservation;
+    if (reservationSeat.status === "booked") {
+      return next();
+    }
+    return next({
+      status: 400,
+      message: "Reservation has already seated or is finished."
+    })
+  }
   async function update(req, res) {
     const updatedTable = {
       ...res.locals.table,
@@ -153,6 +164,7 @@ const VALID_PROPERTIES = [
       asyncErrorBoundary(reservationExists),
       tableCapacity,
       isOccupied,
+      isNotSeated,
       asyncErrorBoundary(update),
     ],
     finish: [
