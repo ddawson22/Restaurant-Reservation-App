@@ -11,6 +11,7 @@ const router = require("express").Router();
  router
  .route("/:table_id/seat")
  .put(controller.update)
+ .delete(controller.finish)
  .all(methodNotAllowed);
 
  module.exports = router;

@@ -2,8 +2,11 @@ import React from "react";
  import Table from "./Table";
 
 function TableList({tables}){
-     const tableMap = tables.map((table) => <Table key={table.table_id} table={table} />);
+     const tableMap = tables.map((table) => (
+     <Table key={table.table_id} table={table} />
+     ));
      return (
+       <div>
          <table className="table">
          <thead>
            <tr>
@@ -12,10 +15,12 @@ function TableList({tables}){
              <th scope="col">Capacity</th>
              <th scope="col">Reservation #</th>
              <th scope="col">Table Status</th>
+             <th></th>
            </tr>
          </thead>
          <tbody>{tableMap}</tbody>
        </table>
+       </div>
      );
  } 
 
