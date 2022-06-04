@@ -8,10 +8,19 @@ function NewReservation(){
     const [errors, setErrors] = useState({});
     const history = useHistory();
   
+
+
+    const handleClose = (event) => {
+      const errorMessage = event.target.parentNode.parentNode.childNodes[0].innerHTML;
+      delete errors[`${errorMessage}`];
+      setErrors({...errors});
+    }
+
     const errorMap = Object.keys(errors).map((error, index) => (
-      <Error key={index} error={error} />
+      <Error key={index} error={error} handleClose={handleClose} />
     ));
-  
+
+
     const initialFormData = {
       first_name: "",
       last_name: "",

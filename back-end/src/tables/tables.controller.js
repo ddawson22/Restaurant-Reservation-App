@@ -85,7 +85,7 @@ const VALID_PROPERTIES = [
     } else {
       next({
         status: 404,
-        message: "Table Could Not Be Found.",
+        message: `Table ${table_id} could not be found.`,
       });
     }
   }
@@ -110,6 +110,15 @@ const VALID_PROPERTIES = [
     next();
   }
  
+  function isNotOccupied(req,res,next){
+    if (!res.locals.table.reservation_id) {
+      return next({
+        status: 400,
+        message: "Table is currently not occupied",
+      });
+    }
+    next();
+  }
   async function update(req, res) {
     const updatedTable = {
       ...res.locals.table,
@@ -119,6 +128,12 @@ const VALID_PROPERTIES = [
     await service.update(updatedTable);
     const data = await service.read(updatedTable.table_id);
     console.log(data);
+    res.json({ data });
+  }
+
+  async function finish(req, res) {
+    const table = res.locals.table;
+    const data = await service.finish(table.table_id, table.reservation_id);
     res.json({ data });
   }
  
@@ -139,5 +154,8 @@ const VALID_PROPERTIES = [
       tableCapacity,
       isOccupied,
       asyncErrorBoundary(update),
+    ],
+    finish: [
+      asyncErrorBoundary(tableExists), isNotOccupied, asyncErrorBoundary(finish) 
     ],
   };
