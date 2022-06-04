@@ -6,6 +6,7 @@ import { today } from "../utils/date-time";
 import NewReservation from "../components/reservations/NewReservation";
 import Seating from "../components/reservations/Seating";
 import NewTable from "../components/tables/NewTable";
+import SearchForReservation from "../components/search/Search";
 /**
  * Defines all the routes for the application.
  *
@@ -30,6 +31,9 @@ import NewTable from "../components/tables/NewTable";
       </Route>
       <Route path="/tables/new">
         <NewTable />
+      </Route>
+      <Route path="/search">
+        <SearchForReservation />
       </Route>
       <Route path="/dashboard">
         <Dashboard date={today()} />
