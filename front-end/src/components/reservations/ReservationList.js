@@ -1,5 +1,5 @@
 import React from "react" 
-import Reservations from "./Reservations";
+import Reservations from "./Reservation";
 
 function ReservationList({ reservations }) {
     const reservationsMap = reservations.map((reservation) => (
@@ -17,6 +17,8 @@ function ReservationList({ reservations }) {
             <th scope="col">People</th>
             <th scope="col">Status</th>
             <th scope="col"></th>
+            <th scope="col"></th>
+           <th scope="col"></th>
           </tr>
         </thead>
         <tbody>{reservationsMap}</tbody>

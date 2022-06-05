@@ -22,6 +22,7 @@ const VALID_PROPERTIES = [
   "created_at",
   "updated_at",
   "status",
+  "reservation_id",
 ]
 
 
@@ -184,6 +185,15 @@ async function updateStatus(req, res) {
   res.json({ data });
 }
 
+async function update(req, res) {
+  const updatedReservation = {
+    ...req.body.data,
+    reservation_id: res.locals.reservation.reservation_id,
+  };
+  const data = await service.update(updatedReservation);
+  res.json({ data });
+}
+
 module.exports = {
   create: 
   [hasOnlyValidProperties, 
@@ -200,5 +210,16 @@ module.exports = {
     asyncErrorBoundary(reservationExists),
     isValidStatus,
     asyncErrorBoundary(updateStatus)
+  ],
+  update: [
+    asyncErrorBoundary(reservationExists),
+    hasOnlyValidProperties,
+    hasRequiredProperties,
+    isValidDate,
+    isValidTime,
+    isValidPeople,
+    isValidReservation,
+    isBooked,
+    asyncErrorBoundary(update),
   ],
 };

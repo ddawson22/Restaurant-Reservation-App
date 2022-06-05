@@ -6,13 +6,14 @@ import useQuery from "../../utils/useQuery";
 import ErrorAlert from "./../../layout/ErrorAlert";
 import ReservationList from "../reservations/ReservationList";
 import TableList from "../tables/TableList";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 /**
  * Defines the dashboard page.
  * @param date
  *  the date for which the user wants to view reservations.
  * @returns {JSX.Element}
  */
-function Dashboard({ date }) {
+ function Dashboard({ date }) {
   const [reservations, setReservations] = useState([]);
   const [tables, setTables] = useState([]);
   const [reservationsError, setReservationsError] = useState(null);
@@ -54,13 +55,15 @@ function Dashboard({ date }) {
 
   return (
     <main>
-     <div className="dashboard dashboard-title row ml-1">
+      <div className="dashboard dashboard-title row ml-1">
         <h1>Dashboard</h1>
       </div>
-      <div className="d-md-flex mb-3 row ml-1">
+      <div className=" dashboard dashboard-info d-md-flex mb-3 row ml-1">
+        <h4 className="mb-0">Reservations for date {pageDate}</h4>
       </div>
       <div className="dashboard dashboard-nav row ml-1 mb-3">
         <button className="btn btn-secondary" onClick={previousDateHandler}>
+          <FaAngleLeft />
           Previous
         </button>
         <button className="btn btn-secondary" onClick={todayHandler}>
@@ -68,13 +71,14 @@ function Dashboard({ date }) {
         </button>
         <button className="btn btn-secondary" onClick={nextDateHandler}>
           Next
+          <FaAngleRight />
         </button>
       </div>
       <div className="dashboard error-list row ml-1">
         <ErrorAlert error={reservationsError} />
       </div>
       <div className="dashboard table-display row mx-1">
-        <div className="col">
+        <div className="col scroll-me">
           <ReservationList reservations={reservations} />
         </div>
         <div className="col">
@@ -84,4 +88,5 @@ function Dashboard({ date }) {
     </main>
   );
 }
+
 export default Dashboard;
