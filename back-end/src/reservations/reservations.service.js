@@ -5,6 +5,7 @@ function list(reservation_date){
     .select("*")
     .where({reservation_date})
     .whereNot({ status: "finished" })
+    .whereNot({ status: "cancelled" })
     .orderBy("reservation_time");
 }
 
@@ -38,10 +39,19 @@ function updateStatus(reservation) {
       )
       .orderBy("reservation_date");
   }
+  function update(updatedReservation) {
+    return knex("reservations")
+      .select("*")
+      .where({ reservation_id: updatedReservation.reservation_id })
+      .update(updatedReservation, "*")
+      .then((createdRecords) => createdRecords[0]);
+  }
+
 module.exports = {
     list,
     read,
     create,
     updateStatus,
     searchForMobile,
+    update,
 }

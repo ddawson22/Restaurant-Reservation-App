@@ -7,6 +7,8 @@ import NewReservation from "../components/reservations/NewReservation";
 import Seating from "../components/reservations/Seating";
 import NewTable from "../components/tables/NewTable";
 import SearchForReservation from "../components/search/Search";
+import EditReservation from "../components/reservations/EditReservation";
+
 /**
  * Defines all the routes for the application.
  *
@@ -29,6 +31,9 @@ import SearchForReservation from "../components/search/Search";
       <Route path="/reservations/:reservation_id/seat">
         <Seating />
       </Route>
+      <Route path="/reservations/:reservation_id/edit">
+        <EditReservation />
+      </Route>
       <Route path="/tables/new">
         <NewTable />
       </Route>
@@ -44,4 +49,5 @@ import SearchForReservation from "../components/search/Search";
     </Switch>
   );
 }
+
 export default Routes;
