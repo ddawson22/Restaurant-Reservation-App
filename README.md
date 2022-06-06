@@ -11,8 +11,17 @@ Project Prompt:
 [API](https://my-restaurant-app-back.herokuapp.com/tables)
 
 
-# Screenshots
+## Screenshots
 
-!<img width="757" [alt="Screen Shot 2022-06-06 at 1 22 43 PM"] ("https://user-images.githubusercontent.com/97245102/172215044-70657fce-b166-443c-b0af-3ae0ddb3db17.png")
+# Dashboard: 
+The Dashboard is located at /dashboard and has the following features:
 
-| ---------------- | ---------------------------------------------------------------- |
+Lists all reservations for one date only. The date is defaulted to today and the reservations are sorted by time.
+Each reservation will display its status. The default status is booked. A "Seat" button will display for reservations that are booked.
+Each reservation displays an "Edit" and "Cancel" button. Only reservations with a status of booked can be edited.
+Displays next, previous, and today buttons that allow the user to see reservations on other dates.
+Displays a list of all tables, sorted by name. Each table will display "Free" or "Occupied" depending on whether or not a reservation is seated at the table. Each "Occupied" table will have a "Finish" button.
+Displays any error messages returned from the API.
+
+/ProjectImages/images/Screen Shot 2022-06-06 at 1.21.27 PM.png
+
