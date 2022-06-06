@@ -1,4 +1,59 @@
-.side-bar {
-  background-color: #393a44;
-  min-width: 200px;
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap');
+
+.body{ 
+  background-color: #faf6e9;
+  padding-right: 0%;
+  margin-right: 0px;
+}
+
+
+.side-bar{
+  background-color: #faf6e9;
+  display:flex;
+  font-family: Raleway; 
+  font-weight: bolder; 
+  color: #343333;
+  font-size: large;
+}
+
+
+.img-fluid {
+  height: 180px;
+  object-fit: cover;
+  width: 100%;
+  flex-wrap: wrap;
+  display:flex;
+}
+
+.img-side {
+  height: auto;
+  object-fit: cover;
+  width: 100%;
+ display:flexbox
+}
+
+
+.a { 
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+
+}
+
+@media only screen and (max-width: 730px) {
+  .scroll-me {
+    overflow-x: scroll;
+  }
+  th, td {
+    min-width: 100px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+    .dashboard{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }

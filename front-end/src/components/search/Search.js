@@ -3,6 +3,7 @@ import ReservationList from "../reservations/ReservationList";
 import NoReservationFound from "./NoReservationFound";
 import {listReservations} from "../../utils/api";
 import ErrorAlert from "../../layout/ErrorAlert";
+import "./Search.css"
 
 function SearchForReservation() {
     const [mobileNumber, setMobileNumber] = useState("");
@@ -51,15 +52,15 @@ function SearchForReservation() {
               value={mobileNumber}
             />
           </label>
-          <div className="input-group-append">
+          
             <button
-              className="btn btn-primary"
+              className="btn btn-outline-dark"
               type="submit"
               onClick={handleFind}
             >
               Find
             </button>
-          </div>
+          
         </div>
         {showList ? (
           <div className="search search-results">

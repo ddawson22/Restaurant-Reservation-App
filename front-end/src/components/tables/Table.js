@@ -3,6 +3,7 @@ import { completeTable } from "../../utils/api";
 import Finish from "../FinishButton";
 import ErrorAlert from "../../layout/ErrorAlert";
 import {useHistory} from "react-router-dom"
+import "./Tables.css";
 
  function Table({table}){
   const [error, setError] = useState(null);

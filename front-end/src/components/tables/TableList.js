@@ -1,6 +1,7 @@
 import React from "react";
  import Table from "./Table";
-
+ import "./Tables.css";
+ 
 function TableList({tables}){
      const tableMap = tables.map((table) => (
      <Table key={table.table_id} table={table} />
