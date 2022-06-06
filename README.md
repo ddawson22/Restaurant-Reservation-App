@@ -1,14 +1,14 @@
-# Capstone: Restaurant Reservation System
+# Restaurant Reservation System
 
-> You have been hired as a full stack developer at _Periodic Tables_, a startup that is creating a reservation system for fine dining restaurants.
-> The software is used only by restaurant personnel when a customer calls to request a reservation.
-> At this point, the customers will not access the system online.
+This application was built for use by restaurant personnel to handle reservations when a customer calls, seat reservations when they arrive at the restaurant, and free up occupied tables when guests leave.
 
-There are no user stories for deployment: it is expected that you will deploy the application to production after you finish a user story.
+Project Prompt: 
 
-There are no user stories for logging: it is expected that you will add logging to the application with enough detail to help you diagnose issues in production.
+  You have been hired as a full stack developer at Periodic Tables, a startup that is creating a reservation system for fine dining restaurants. The    Product Manager has already created 8 user stories for Periodic Tables, and another developer has already written the tests for each of the user stories.
 
-## Existing files
+# Links 
+[API](https://my-restaurant-app-back.herokuapp.com/tables)
+
 
 This repository is set up as a *monorepo*, meaning that the frontend and backend projects are in one repository. This allows you to open both projects in the same editor.
 
