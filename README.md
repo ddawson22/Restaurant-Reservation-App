@@ -23,5 +23,5 @@ Displays next, previous, and today buttons that allow the user to see reservatio
 Displays a list of all tables, sorted by name. Each table will display "Free" or "Occupied" depending on whether or not a reservation is seated at the table. Each "Occupied" table will have a "Finish" button.
 Displays any error messages returned from the API.
 
-/ProjectImages/images/Screen Shot 2022-06-06 at 1.21.27 PM.png
+![Dashboard](file:///Users/dakotadawson/Desktop/ProjectImages/Dashboard.png)
 
