@@ -1,5 +1,4 @@
 import React from "react";
-//  import { FaTimes, FaCheck } from "react-icons/fa";
  import "./Reservation.css";
 
 
@@ -12,7 +11,7 @@ function ReservationForm({
  }) {
    return (
      <>
-       <h1 className="my-3">{mode} Reservation</h1>
+       
        <form onSubmit={submitHandler}>
          <div className="form-group">
            <label htmlFor="first_name">First Name:</label>
