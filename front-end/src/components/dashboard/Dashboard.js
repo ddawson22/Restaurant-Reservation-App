@@ -6,13 +6,8 @@ import useQuery from "../../utils/useQuery";
 import ErrorAlert from "./../../layout/ErrorAlert";
 import ReservationList from "../reservations/ReservationList";
 import TableList from "../tables/TableList";
-import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
-/**
- * Defines the dashboard page.
- * @param date
- *  the date for which the user wants to view reservations.
- * @returns {JSX.Element}
- */
+import "./Dashboard.css";
+
  function Dashboard({ date }) {
   const [reservations, setReservations] = useState([]);
   const [tables, setTables] = useState([]);
@@ -58,12 +53,12 @@ import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
       <div className="dashboard dashboard-title row ml-1">
         <h1>Dashboard</h1>
       </div>
-      <div className=" dashboard dashboard-info d-md-flex mb-3 row ml-1">
+      <div className=" dashboard dashboard-info d-md-flex mb-3 row ml-1 my-4 font-weight-bold font">
         <h4 className="mb-0">Reservations for date {pageDate}</h4>
       </div>
       <div className="dashboard dashboard-nav row ml-1 mb-3">
         <button className="btn btn-secondary" onClick={previousDateHandler}>
-          <FaAngleLeft />
+        
           Previous
         </button>
         <button className="btn btn-secondary" onClick={todayHandler}>
@@ -71,7 +66,7 @@ import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
         </button>
         <button className="btn btn-secondary" onClick={nextDateHandler}>
           Next
-          <FaAngleRight />
+          
         </button>
       </div>
       <div className="dashboard error-list row ml-1">

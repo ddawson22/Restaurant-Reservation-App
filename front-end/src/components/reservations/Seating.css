@@ -1,0 +1,23 @@
+.btn{ 
+    background-color: #faf6e9;
+    color: #494949;
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: lowercase;
+    font-weight: 700;
+    outline-color: #faf6e9;
+  }
+  
+  .btn:hover{
+    background-color: #343333;
+  
+  }
+  
+  .btn-find{
+    background-color: #faf6e9;
+    color: #494949;
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: lowercase;
+    font-weight: 700;
+    outline-color:#494949;
+  }
+

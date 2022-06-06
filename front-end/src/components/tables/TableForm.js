@@ -1,4 +1,5 @@
 import React from "react";
+import "./Tables.css";
 
  function TableForm({
    title,
@@ -35,7 +36,7 @@ import React from "react";
            />
          </label>
          <div>
-           <button className="btn btn-primary mr-2" type="submit">
+           <button className="btn btn-outline-dark mr-2" type="submit">
              Submit
            </button>
            <button

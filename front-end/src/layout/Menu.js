@@ -1,7 +1,6 @@
 import React from "react";
-
 import { Link } from "react-router-dom";
-
+import "./Layout.css"
 /**
  * Defines the menu for this application.
  *
@@ -10,13 +9,13 @@ import { Link } from "react-router-dom";
 
 function Menu() {
   return (
-    <nav className="navbar navbar-dark align-items-start p-0">
+    <nav className="navbar navbar-light align-items-start p-0">
       <div className="container-fluid d-flex flex-column p-0">
         <Link
           className="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0"
           to="/"
         >
-          <div className="sidebar-brand-text mx-3">
+          <div className="sidebar-brand-text mx-0">
             <span>Periodic Tables</span>
           </div>
         </Link>
@@ -53,6 +52,14 @@ function Menu() {
             id="sidebarToggle"
             type="button"
           />
+          <div className="col" style={{ padding: "0px" }}>
+          <img src="../../icon.png"
+            alt="sidebar banner"
+              className="img-side">
+            </img>
+             <div style={{ padding: "15px" }}>
+            </div> 
+            </div>
         </div>
       </div>
     </nav>

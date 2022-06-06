@@ -2,6 +2,8 @@ import React, { useState } from "react";
  import { useHistory, Link } from "react-router-dom";
  import ErrorAlert from "../../layout/ErrorAlert";
  import { cancelReservation } from "../../utils/api";
+import "./Reservation.css";
+
 function Reservation({ reservation }) {
 
 

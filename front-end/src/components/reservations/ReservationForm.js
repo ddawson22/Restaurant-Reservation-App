@@ -1,5 +1,7 @@
 import React from "react";
- import { FaTimes, FaCheck } from "react-icons/fa";
+//  import { FaTimes, FaCheck } from "react-icons/fa";
+ import "./Reservation.css";
+
 
 function ReservationForm({
    handleChange,
@@ -94,10 +96,10 @@ function ReservationForm({
              type="button"
              onClick={handleCancel}
            >
-             <FaTimes /> Cancel
+              Cancel
            </button>
-           <button className="btn btn-primary" type="submit">
-             <FaCheck /> Submit
+           <button className="btn btn-outline-dark" type="submit" outline-color="494949">
+            Submit
            </button>
          </div>
        </form>

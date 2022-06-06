@@ -3,8 +3,7 @@ import { useParams, useHistory} from "react-router-dom";
 import LoadDashboard from "../../layout/LoadDashboard"
 import { readReservation, listTables, seatReservation } from "../../utils/api";
 import TableOption from "../tables/TableOption";
-
-
+import "./Seating.css"
 
 function Seating() {
     const [currentReservation, setCurrentReservation] = useState({});
@@ -98,7 +97,7 @@ function Seating() {
                 </button>
               </div>
               <div>
-                <button type="submit" className="btn btn-primary" onClick={handleSubmit}>
+                <button type="submit" className="btn btn-outline-dark" onClick={handleSubmit}>
                   Submit
                 </button>
               </div>

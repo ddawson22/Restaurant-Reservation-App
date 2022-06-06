@@ -3,8 +3,8 @@ import React, { useState } from "react";
  import Error from "../Error";
  import TableForm from "./TableForm"
  import { useHistory } from "react-router-dom";
-
-
+ import "./Tables.css";
+ 
  function NewTable() {
    const [tableErrors, setTableErrors] = useState({});
    const history = useHistory();
