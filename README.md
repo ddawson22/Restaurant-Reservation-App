@@ -53,7 +53,7 @@ The Dashboard is located at /dashboard and has the following features:
 * Clicking on the "Cancel" button will take the user to the previous page. 
 * While attempting to create a new reservation, any error messages returned from the API will be displayed.
 
-![CreateNewReservation]
+![CreateNewReservation](Screenshots/New.png)
 
 # Create a new table:
 
