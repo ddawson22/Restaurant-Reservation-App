@@ -11,13 +11,13 @@ Project Prompt:
 * Built with React.js, JSX, HTML, CSS, Bootstrap, Expressjs, Node.js, Git, Heroku, ElephantSQL, PostgreSQL, and Google Fonts
 
 * This full stack application has built in unit, integration, and e2e tests. Each test is split up by user story. To install this application, you must: 
-      ** Fork and Clone this repository.
-      * Run cp ./back-end/.env.sample ./back-end/.env.
-      * Update the ./back-end/.env file with the connection URL's to your ElephantSQL database instance.
-      * Run cp ./front-end/.env.sample ./front-end/.env.
-      * You should not need to make changes to the ./front-end/.env file unless you want to connect to a backend at a location other than http://localhost:5001
-      * Run npm install to install project dependencies.
-      * Run npm run start:dev to start your server in development mode
+   * Fork and Clone this repository.
+   * Run cp ./back-end/.env.sample ./back-end/.env.
+   * Update the ./back-end/.env file with the connection URL's to your ElephantSQL database instance.
+   * Run cp ./front-end/.env.sample ./front-end/.env.
+   * You should not need to make changes to the ./front-end/.env file unless you want to connect to a backend at a location other than http://localhost:5001
+   * Run npm install to install project dependencies.
+   * Run npm run start:dev to start your server in development mode
 
 * Additionally, tests for this application can be run for this application for each User Story by running npm run test:X where X is the user story number. 
 
