@@ -72,6 +72,18 @@ function isValidReservation(req, res, next){
   next();
 }
 
+function noReservationsOnTuesdays(req, res, next) {
+  const reservation_date = req.body.data.reservation_date;
+  const weekday = new Date(reservation_date).getUTCDay();
+  if (weekday !== 2) {
+    return next();
+  }
+  next({
+    status: 400,
+    message: `The restaurant is closed on Tuesdays.`,
+  });
+}
+
 function isValidDate(req, res, next) {
   const { data = {} } = req.body;
   if (!data["reservation_date"].match(/\d{4}-\d{2}-\d{2}/)) {
