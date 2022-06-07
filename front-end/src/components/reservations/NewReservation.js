@@ -61,7 +61,7 @@ function NewReservation(){
     return (
       <>
         <div className="createErrors">{errorMap ? errorMap : null}</div>
-        <h1 className="my-3">Create Reservation</h1>
+        <h1 className="my-3">Create a New Reservation</h1>
         <ReservationForm
           handleChange={handleChange}
           handleCancel={handleCancel}

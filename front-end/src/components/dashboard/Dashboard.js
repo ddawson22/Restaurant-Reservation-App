@@ -7,7 +7,7 @@ import ErrorAlert from "./../../layout/ErrorAlert";
 import ReservationList from "../reservations/ReservationList";
 import TableList from "../tables/TableList";
 import "./Dashboard.css";
-
+// dashboard
  function Dashboard({ date }) {
   const [reservations, setReservations] = useState([]);
   const [tables, setTables] = useState([]);
