@@ -11,7 +11,7 @@ Project Prompt:
 * Built with React.js, JSX, HTML, CSS, Bootstrap, Expressjs, Node.js, Git, Heroku, ElephantSQL, PostgreSQL, and Google Fonts
 
 * This full stack application has built in unit, integration, and e2e tests. Each test is split up by user story. To install this application, you must: 
-      * Fork and Clone this repository.
+      ** Fork and Clone this repository.
       * Run cp ./back-end/.env.sample ./back-end/.env.
       * Update the ./back-end/.env file with the connection URL's to your ElephantSQL database instance.
       * Run cp ./front-end/.env.sample ./front-end/.env.
