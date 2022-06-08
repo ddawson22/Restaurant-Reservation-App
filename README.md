@@ -1,4 +1,4 @@
-### Restaurant Reservation System
+# Restaurant Reservation System
 
 This application was built for use by restaurant personnel to handle reservations when a customer calls, seat reservations when they arrive at the restaurant, and free up occupied tables when guests leave.
 
@@ -11,24 +11,27 @@ Project Prompt:
 * Built with React.js, JSX, HTML, CSS, Bootstrap, Expressjs, Node.js, Git, Heroku, ElephantSQL, PostgreSQL, and Google Fonts
 
 * This full stack application has built in unit, integration, and e2e tests. Each test is split up by user story. To install this application, you must: 
-      * Fork and Clone this repository.
-      * Run cp ./back-end/.env.sample ./back-end/.env.
-      * Update the ./back-end/.env file with the connection URL's to your ElephantSQL database instance.
-      * Run cp ./front-end/.env.sample ./front-end/.env.
-      * You should not need to make changes to the ./front-end/.env file unless you want to connect to a backend at a location other than http://localhost:5001
-      * Run npm install to install project dependencies.
-      * Run npm run start:dev to start your server in development mode
+   * Fork and Clone this repository.
+   * Run cp ./back-end/.env.sample ./back-end/.env.
+   * Update the ./back-end/.env file with the connection URL's to your ElephantSQL database instance.
+   * Run cp ./front-end/.env.sample ./front-end/.env.
+   * You should not need to make changes to the ./front-end/.env file unless you want to connect to a backend at a location other than http://localhost:5001
+   * Run npm install to install project dependencies.
+   * Run npm run start:dev to start your server in development mode
 
 * Additionally, tests for this application can be run for this application for each User Story by running npm run test:X where X is the user story number. 
 
 ## Links 
 [Live Demo](https://my-app-restaurant-front.herokuapp.com/dashboard)
+
+
+
 [API](https://my-restaurant-app-back.herokuapp.com/tables)
 
 
 ## Screenshots
 
-# Dashboard: 
+## Dashboard: 
 The Dashboard is located at /dashboard and has the following features:
 
 * Lists all reservations for one date only. The date is defaulted to today and the reservations are sorted by time.
@@ -45,7 +48,7 @@ The Dashboard is located at /dashboard and has the following features:
 
 ![Dashboard](Screenshots/Dashboard.png)
 
-# Create a New Reservation: 
+## Create a New Reservation: 
 
 * Clicking on "New Reservation" of the Menu side bar will take the user to the /reservations/new page. 
 * The Create Reservation page displays a form with the following required fields: first name, last name, mobile number, date of reservation, time of reservation, and the number of people in the party. 
@@ -53,9 +56,9 @@ The Dashboard is located at /dashboard and has the following features:
 * Clicking on the "Cancel" button will take the user to the previous page. 
 * While attempting to create a new reservation, any error messages returned from the API will be displayed.
 
-![CreateNewReservation]
+![CreateNewReservation](Screenshots/New.png)
 
-# Create a new table:
+## Create a new table:
 
 * Clicking on New Table of the Menu side bar will take the user to the /tables/new page. 
 * The Create Table page displays a form with the following required fields: table name and capacity. 
@@ -65,13 +68,13 @@ The Dashboard is located at /dashboard and has the following features:
 
 ![CreateNewTable](Screenshots/NewTable.png)
 
-# Seat A Reservation: 
+## Seat A Reservation: 
 
 * When the user clicks on the "Seat" button associated with a particular reservation, the application will take the user to the Seat Reservation page.
 
 ![Seat](Screenshots/Seat.png)
 
-# Finish an Occupied Table: 
+## Finish an Occupied Table: 
 
 * Clicking on the "Finish" button of an "Occupied" table will display the following confirmation:
 
@@ -83,7 +86,7 @@ The Dashboard is located at /dashboard and has the following features:
 
 
 
-# Cancel a Reservation: 
+## Cancel a Reservation: 
 
 Clicking on the "Cancel" button associated with a particular reservation will display the following confirmation:
 
@@ -92,7 +95,7 @@ Clicking on the "Cancel" button associated with a particular reservation will di
 * Clicking "OK" on the confirmation dialog will set the status of that reservation to cancelled, and the results on the page are then refreshed. 
 * Clicking "Cancel" on the confirmation dialog will make no changes.
 
-# Edit a Reservation: 
+## Edit a Reservation: 
 
 * Clicking on the "Edit" button will navigate the user to the following page: 
 
