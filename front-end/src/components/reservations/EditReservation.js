@@ -16,9 +16,9 @@ import React, { useState, useEffect } from "react";
      setErrors({ ...errors });
    };
 
-   const errorMap = Object.keys(errors).map((error, index) => (
-     <Error key={index} error={error} handleErrorClose={handleErrorClose} />
-   ));
+   const errorMap = Object.keys(errors).map((error) => (
+    <Error key={`error-${error}`} error={error} handleErrorClose={handleErrorClose} />
+  ));
 
    const { reservation_id } = useParams();
    const history = useHistory();

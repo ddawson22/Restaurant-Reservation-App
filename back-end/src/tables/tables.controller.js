@@ -135,7 +135,6 @@ const VALID_PROPERTIES = [
       ...res.locals.table,
       reservation_id: req.body.data.reservation_id,
     };
-    console.log(updatedTable);
     await service.update(updatedTable);
     const data = await service.read(updatedTable.table_id);
     console.log(data);

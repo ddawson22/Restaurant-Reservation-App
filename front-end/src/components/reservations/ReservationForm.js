@@ -7,7 +7,6 @@ function ReservationForm({
    submitHandler,
    formData,
    handleCancel,
-   mode,
  }) {
    return (
      <>

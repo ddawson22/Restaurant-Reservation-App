@@ -16,15 +16,15 @@ import React, { useState } from "react";
 
    const [tableData, setTableData] = useState({ ...initialTableData });
 
-   const handleClose = (event) => {
+   const handleErrorClose = (event) => {
      const errorMessage = event.target.parentNode.parentNode.childNodes[0].innerHTML;
      delete tableErrors[`${errorMessage}`];
      setTableErrors({ ...tableErrors });
    };
 
-   const errorMap = Object.keys(tableErrors).map((error, index) => (
-     <Error key={index} error={error} handleClose={handleClose} />
-   ));
+   const errorMap = Object.keys(tableErrors).map((error) => (
+    <Error key={`error-${error}`} error={error} handleErrorClose={handleErrorClose} />
+  ));
 
    const handleSubmit = async (event) => {
      event.preventDefault();

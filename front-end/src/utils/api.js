@@ -149,3 +149,18 @@ export async function cancelReservation(reservation, status) {
   };
   return await fetchJson(url, options, reservation);
 }
+
+export async function updateReservation(data, signal) {
+  const url = new URL(
+    `${API_BASE_URL}/reservations/${data.data.reservation_id}`
+  );
+
+  const options = {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(data),
+    signal,
+  };
+
+  return await fetchJson(url, options, {});
+}
